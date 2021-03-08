@@ -24,7 +24,7 @@ def get_params():
     # in_reply_to_user_id, lang, non_public_metrics, organic_metrics,
     # possibly_sensitive, promoted_metrics, public_metrics, referenced_tweets,
     # source, text, and withheld
-    return {"tweet.fields": "created_at"}
+    return {"tweet.fields": "created_at,public_metrics,geo,id,source,attachments"}
 
 
 def create_headers(bearer_token):
@@ -50,7 +50,9 @@ def main():
     headers = create_headers(bearer_token)
     params = get_params()
     json_response = connect_to_endpoint(url, headers, params)
-    print(json.dumps(json_response, indent=4, sort_keys=True))
+    # print(json.dumps(json_response, indent=4, sort_keys=True))
+    with open('data_2.json', 'w') as outfile:
+		  	json.dump(json_response, outfile)
 
 
 if __name__ == "__main__":
