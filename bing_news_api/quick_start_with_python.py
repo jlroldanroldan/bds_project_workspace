@@ -40,7 +40,7 @@ try:
 
     print("\nJSON Response:\n")
     pprint(response.json())
-    with open('data_2.json', 'w') as outfile:
+    with open('data_plug_power_inc.json', 'w') as outfile:
 		    json.dump(response.json(), outfile)
 	  	
 except Exception as ex:
