@@ -53,12 +53,7 @@ def set_rules(headers, delete, bearer_token):
         {"value": "Daqo New Energy Corp Sponsored", "tag": "Daqo New Energy Corp Sponsored"},
         # {"value": "Climate Change", "tag": "Climate Change"},
         {"value": "First Solar", "tag": "First Solar"},
-        # {"value": "Enphase Energy", "tag": "Enphase Energy"},
-        # {"value": "Enphase Energy", "tag": "Enphase Energy"},
-        # {"value": "Enphase Energy", "tag": "Enphase Energy"},
-        # {"value": "Enphase Energy", "tag": "Enphase Energy"},
-        # {"value": "Enphase Energy", "tag": "Enphase Energy"},
-        # {"value": "Tesla", "tag": "Apple"},
+        {"value": "Tesla", "tag": "Tesla"},
         # {"value": "cat has:images -grumpy", "tag": "cat pictures"},
     ]
     payload = {"add": sample_rules}
@@ -75,6 +70,7 @@ def set_rules(headers, delete, bearer_token):
 
 
 def get_stream(headers, set, bearer_token):
+    tweet_count = 0
     response = requests.get(
         "https://api.twitter.com/2/tweets/search/stream", headers=headers, stream=True,
     )
@@ -88,8 +84,10 @@ def get_stream(headers, set, bearer_token):
     for response_line in response.iter_lines():
         if response_line:
             json_response = json.loads(response_line)
-            print(json.dumps(json_response, indent=4, sort_keys=True))
-            with open('twitter_stream_test_1.json', 'w') as outfile:
+            # print(json.dumps(json_response, indent=4, sort_keys=True))
+            tweet_count = tweet_count +  1
+            file_name = "twitter{}.json".format(tweet_count)
+            with open(file_name, 'w') as outfile:
               json.dump(json_response, outfile)
 
 
