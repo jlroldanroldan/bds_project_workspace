@@ -90,7 +90,7 @@ def set_rules(headers, delete, bearer_token):
 
 
 def get_stream(headers, set, bearer_token):
-    tweet_count = 15
+    tweet_count = 50
     response = requests.get(
         "https://api.twitter.com/2/tweets/search/stream", headers=headers, stream=True,
     )
