@@ -46,35 +46,9 @@ def delete_all_rules(headers, bearer_token, rules):
 def set_rules(headers, delete, bearer_token):
     # You can adjust the rules if needed
     sample_rules = [
-        {"value": "Enphase Energy", "tag": "Enphase Energy"},
-        {"value": "VERBUND AG", "tag": "VERBUND AG"},
-        {"value": "Daqo New", "tag": "Daqo New Energy"},
-        {"value": "Meridian Energy", "tag": "Meridian Energy Limited"},
-        {"value": "Siemens Gamesa", "tag": "Siemens Gamesa"},
-        # {"value": "Contact Energy", "tag": "Contact Energy"},
-        {"value": "Orsted", "tag": "Orsted"},
-        {"value": "Vestas Wind", "tag": "Vestas Wind Systems"},
-        {"value": "Ormat Technologies", "tag": "Ormat Technologies"},
-        {"value": "Xinyi Solar", "tag": "Xinyi Solar Holdings"},
-        # {"value": "First Solar", "tag": "First Solar"},
-        # {"value": "Scatec", "tag": "Scatec"},
-        # {"value": "EDP Renovaveis", "tag": "EDP Renovaveis"},
-        # {"value": "Boralex Inc.", "tag": "Boralex Inc."},
-        # {"value": "SolarEdge Technologies", "tag": "SolarEdge Technologies"},
-        # {"value": "Sunrun Inc", "tag": "Sunrun Inc"},
-        # {"value": "Innergex Renewable Energy", "tag": "Innergex Renewable Energy"},
-        # {"value": "Atlantica Sustainable Infrastructure ", "tag": "Atlantica Sustainable Infrastructure "},
-        # {"value": "Encavis AG", "tag": "Encavis AG"},
-        # {"value": "Neoen S.A", "tag": "Neoen S.A"},
-        # {"value": "Companhia Energetica de Minas Gerais", "tag": "Companhia Energetica de Minas Gerais"},
-        # {"value": "Doosan Fuel Cell Co", "tag": "Doosan Fuel Cell Co"},
-        # {"value": "Canadian Solar Inc.", "tag": "Canadian Solar Inc."},
-        # {"value": "Solaria Energia y Medio Ambiente", "tag": "Solaria Energia y Medio Ambiente"},
-        # {"value": "Renewable Energy Group", "tag": "Renewable Energy Group"},
-        # {"value": "PowerCell Sweden", "tag": "PowerCell Sweden"},
-        # {"value": "Companhia Paranaense de Energia", "tag": "Companhia Paranaense de Energia"},
-        # {"value": "PowerCell Sweden", "tag": "PowerCell Sweden"},
-        # {"value": "Enlight Renewable Energy", "tag": "Enlight Renewable Energy"},
+        {"value": "from:BBCWorld", "tag": "BBC"},
+        {"value": "from:cnni", "tag": "CNN International"},
+        {"value": "from:JLRoldanRoldan", "tag": "Testing"},
     ]
     payload = {"add": sample_rules}
     response = requests.post(
@@ -90,7 +64,7 @@ def set_rules(headers, delete, bearer_token):
 
 
 def get_stream(headers, set, bearer_token):
-    tweet_count = 15
+    tweet_count = 8
     response = requests.get(
         "https://api.twitter.com/2/tweets/search/stream", headers=headers, stream=True,
     )

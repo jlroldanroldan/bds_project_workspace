@@ -23,7 +23,7 @@ Documentation: https: // docs.microsoft.com/en-us/azure/cognitive-services/bing-
 subscriptionKey = os.environ.get("BING_SEARCH_V7_SUBSCRIPTION_KEY")
 # endpoint = os.environ.get("BING_SEARCH_V7_ENDPOINT") + "/bing/v7.0/news/search"
 endpoint = "https://api.bing.microsoft.com/v7.0/search"
-query = "Plug Power Inc"
+query = "Enphase Energy"
 
 # Construct a request
 mkt = 'en-US'
