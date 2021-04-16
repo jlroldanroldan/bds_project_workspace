@@ -17,7 +17,7 @@ Aaron Rankin <aaron at sproutsocial.com> @aaronrankin
 Adam Samet <asamet at twitter.com> @damnitsamet
 Adrian Petrescu <apetresc at gmail.com> @apetresc
 Akash Nawani <akash.nawani at gmail.com> @AkashNawani
-Alan Gutierrez <alan at blogometer.com>
+Alan Gutierrez <alan at bloometer.com>
 Alessandro Bahgat <ale.bahgat at gmail.com> @abahgat
 Alex Kira <alex.kira at gmail.com> @alexkira
 Amine Bezzarga <abezzarg at gmail.com> @Go_Mino

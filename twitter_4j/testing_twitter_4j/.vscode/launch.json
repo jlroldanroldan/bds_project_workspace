@@ -1,0 +1,672 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Launch Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "Launch VersionAppEngine",
+			"request": "launch",
+			"mainClass": "twitter4j.VersionAppEngine",
+			"projectName": "twitter4j-appengine"
+		},
+		{
+			"type": "java",
+			"name": "Launch VersionAsync",
+			"request": "launch",
+			"mainClass": "twitter4j.VersionAsync",
+			"projectName": "twitter4j-async"
+		},
+		{
+			"type": "java",
+			"name": "Launch MBeanServerRunner",
+			"request": "launch",
+			"mainClass": "twitter4j.MBeanServerRunner",
+			"projectName": "twitter4j-core"
+		},
+		{
+			"type": "java",
+			"name": "Launch SizeofStatusChecker",
+			"request": "launch",
+			"mainClass": "twitter4j.SizeofStatusChecker",
+			"projectName": "twitter4j-core"
+		},
+		{
+			"type": "java",
+			"name": "Launch Version",
+			"request": "launch",
+			"mainClass": "twitter4j.Version",
+			"projectName": "twitter4j-core"
+		},
+		{
+			"type": "java",
+			"name": "Launch ExamplesVersion",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.ExamplesVersion",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetAccountSettings",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.account.GetAccountSettings",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetRateLimitStatus",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.account.GetRateLimitStatus",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UpdateProfile",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.account.UpdateProfile",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UpdateProfileBackgroundImage",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.account.UpdateProfileBackgroundImage",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UpdateProfileImage",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.account.UpdateProfileImage",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch VerifyCredentials",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.account.VerifyCredentials",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch AsyncUpdate",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.async.AsyncUpdate",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateBlock",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.block.CreateBlock",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyBlock",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.block.DestroyBlock",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetBlockingUsers",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.block.GetBlockingUsers",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetBlockingUsersIDs",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.block.GetBlockingUsersIDs",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyDirectMessage",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.directmessage.DestroyDirectMessage",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetDirectMessages",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.directmessage.GetDirectMessages",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch SendDirectMessage",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.directmessage.SendDirectMessage",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowDirectMessage",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.directmessage.ShowDirectMessage",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateFavorite",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.favorite.CreateFavorite",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyFavorite",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.favorite.DestroyFavorite",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetFavorites",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.favorite.GetFavorites",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetFollowersIDs",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendsandfollowers.GetFollowersIDs",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetFriendsIDs",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendsandfollowers.GetFriendsIDs",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateFriendship",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.CreateFriendship",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyFriendship",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.DestroyFriendship",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetIncomingFriendships",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.GetIncomingFriendships",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetOutgoingFriendships",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.GetOutgoingFriendships",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch LookupFriendships",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.LookupFriendships",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowFriendship",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.ShowFriendship",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UpdateFriendship",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.friendship.UpdateFriendship",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetGeoDetails",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.geo.GetGeoDetails",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetSimilarPlaces",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.geo.GetSimilarPlaces",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ReverseGeoCode",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.geo.ReverseGeoCode",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch SearchPlaces",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.geo.SearchPlaces",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetPrivacyPolicy",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.help.GetPrivacyPolicy",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetTermsOfService",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.help.GetTermsOfService",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch LoadRawJSON",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.json.LoadRawJSON",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch SaveRawJSON",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.json.SaveRawJSON",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch RateLimitLambda",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.lambda.RateLimitLambda",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch TwitterStreamLambda",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.lambda.TwitterStreamLambda",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateUserList",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.CreateUserList",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateUserListMember",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.CreateUserListMember",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateUserListMembers",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.CreateUserListMembers",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateUserListSubscription",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.CreateUserListSubscription",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DeleteUserListMember",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.DeleteUserListMember",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyUserList",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.DestroyUserList",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyUserListSubscription",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.DestroyUserListSubscription",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserListMembers",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.GetUserListMembers",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserListMemberships",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.GetUserListMemberships",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserListStatuses",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.GetUserListStatuses",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserListSubscribers",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.GetUserListSubscribers",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserListSubscriptions",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.GetUserListSubscriptions",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserLists",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.GetUserLists",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowUserList",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.ShowUserList",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowUserListMembership",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.ShowUserListMembership",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowUserListSubscription",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.ShowUserListSubscription",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UpdateUserList",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.list.UpdateUserList",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetMutingUsersIDs",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.mute.GetMutingUsersIDs",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetAccessToken",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.oauth.GetAccessToken",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch CreateSavedSearch",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.savedsearches.CreateSavedSearch",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroySavedSearch",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.savedsearches.DestroySavedSearch",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetSavedSearches",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.savedsearches.GetSavedSearches",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowSavedSearch",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.savedsearches.ShowSavedSearch",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch SearchTweets",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.search.SearchTweets",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ReportSpam",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.spamreporting.ReportSpam",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintFilterStream",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintFilterStream",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintFirehoseStream",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintFirehoseStream",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintLinksStream",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintLinksStream",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintRawSampleStream",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintRawSampleStream",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintRetweetStream",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintRetweetStream",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintSampleStream",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintSampleStream",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch PrintSiteStreams",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.stream.PrintSiteStreams",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetMemberSuggestions",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.suggestedusers.GetMemberSuggestions",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetSuggestedUserCategories",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.suggestedusers.GetSuggestedUserCategories",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserSuggestions",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.suggestedusers.GetUserSuggestions",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetHomeTimeline",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.timeline.GetHomeTimeline",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetMentions",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.timeline.GetMentions",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetUserTimeline",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.timeline.GetUserTimeline",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetAvailableTrends",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.trends.GetAvailableTrends",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetPlaceTrends",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.trends.GetPlaceTrends",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch DestroyStatus",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.tweets.DestroyStatus",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch GetRetweets",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.tweets.GetRetweets",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch RetweetStatus",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.tweets.RetweetStatus",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowStatus",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.tweets.ShowStatus",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UpdateStatus",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.tweets.UpdateStatus",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch UploadMultipleImages",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.tweets.UploadMultipleImages",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch LookupUsers",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.user.LookupUsers",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch SearchUsers",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.user.SearchUsers",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch ShowUser",
+			"request": "launch",
+			"mainClass": "twitter4j.examples.user.ShowUser",
+			"projectName": "twitter4j-examples"
+		},
+		{
+			"type": "java",
+			"name": "Launch VersionHTTP2",
+			"request": "launch",
+			"mainClass": "twitter4j.VersionHTTP2",
+			"projectName": "twitter4j-http2-support"
+		},
+		{
+			"type": "java",
+			"name": "Launch VersionStream",
+			"request": "launch",
+			"mainClass": "twitter4j.VersionStream",
+			"projectName": "twitter4j-stream"
+		}
+	]
+}

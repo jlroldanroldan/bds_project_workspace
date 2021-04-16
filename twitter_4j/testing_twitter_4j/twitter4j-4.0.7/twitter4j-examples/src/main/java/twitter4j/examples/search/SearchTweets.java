@@ -31,13 +31,14 @@ public class SearchTweets {
      * @param args search query
      */
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.out.println("java twitter4j.examples.search.SearchTweets [query]");
-            System.exit(-1);
-        }
+        // if (args.length < 1) {
+        //     System.out.println("java twitter4j.examples.search.SearchTweets [query]");
+        //     System.exit(-1);
+        // }
         Twitter twitter = new TwitterFactory().getInstance();
         try {
-            Query query = new Query(args[0]);
+            // Query query = new Query(args[0]);
+            Query query = new Query("NYU");
             QueryResult result;
             do {
                 result = twitter.search(query);
