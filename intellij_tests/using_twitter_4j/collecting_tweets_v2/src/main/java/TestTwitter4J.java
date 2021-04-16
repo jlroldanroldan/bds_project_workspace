@@ -78,7 +78,6 @@ public class TestTwitter4J {
             query.setLang( "en");
             QueryResult result = twitter.search(query);
 
-
 //            FileWriter csvWriter = new FileWriter("D:/NYU/Semester 2/Big Data Science/Project Idea/Final Project/twitterdumps_output/datadump_firstsolar.csv",true);// change to relative path later
 
             FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v2/datadump_firstsolar_created_at_v5.csv",true);// change to relative path later
