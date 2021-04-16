@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="collecting_tweets_v2" />
         <module name="test_twitter_api_intellij" />
         <module name="collecting_tweets_v1" />
       </profile>

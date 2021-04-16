@@ -72,14 +72,22 @@ public class TestTwitter4J {
 
 //            FileWriter csvWriter = new FileWriter("D:/NYU/Semester 2/Big Data Science/Project Idea/Final Project/twitterdumps_output/datadump_firstsolar.csv",true);// change to relative path later
 
-            FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v1/datadump_firstsolar.csv",true);// change to relative path later
+            FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v2/datadump_firstsolar_created_at_v3.csv",true);// change to relative path later
 
-
-            csvWriter.append("Rundate:"+ strDate+ "ScreenName");
+            csvWriter.append("Rundate:"+ strDate+ "\n");
+            csvWriter.append("CreatedAt");
+            csvWriter.append(",");
+            csvWriter.append("TweetId");
+            csvWriter.append(",");
+            csvWriter.append("ScreenName");
             csvWriter.append(",");
             csvWriter.append("TweetText");
             csvWriter.append("\n");
             for (Status st : result.getTweets()) {
+                csvWriter.append(st.getCreatedAt().toString());
+                csvWriter.append(",");
+                csvWriter.append(String.valueOf(st.getId()));
+                csvWriter.append(",");
                 csvWriter.append( st.getUser().getScreenName());
                 csvWriter.append(",");
                 //System.out.println(st.getText().replace("\n", "").replace("\r", "").replace(",", " "));
@@ -95,7 +103,7 @@ public class TestTwitter4J {
 
 
         } catch (TwitterException ex) {
-//            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TestTwitter4J.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//main ends
