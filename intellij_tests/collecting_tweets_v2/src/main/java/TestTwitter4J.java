@@ -42,11 +42,18 @@ public class TestTwitter4J {
 
             // The factory instance is re-useable and thread safe.
             ConfigurationBuilder cb = new ConfigurationBuilder();
+//            cb.setDebugEnabled(true)
+//                    .setOAuthConsumerKey("Lyxd00oKyOJFZ4FxqiKkJUBwG")
+//                    .setOAuthConsumerSecret("RA8J3wYdj1XKB5NrZQ4ny5vhfs2YHIdgrPcDIP8RXrQsaK31yc")
+//                    .setOAuthAccessToken("4141536579-QYXCOhe4vw3ciWLkaqHYxeRk1OhHX3Z0MfBNbFs")
+//                    .setOAuthAccessTokenSecret("9VyHq0MIYAUE8taqStT9ZMiPfHbOdXGkfbps5oHJT2smK");
             cb.setDebugEnabled(true)
-                    .setOAuthConsumerKey("Lyxd00oKyOJFZ4FxqiKkJUBwG")
-                    .setOAuthConsumerSecret("RA8J3wYdj1XKB5NrZQ4ny5vhfs2YHIdgrPcDIP8RXrQsaK31yc")
-                    .setOAuthAccessToken("4141536579-QYXCOhe4vw3ciWLkaqHYxeRk1OhHX3Z0MfBNbFs")
-                    .setOAuthAccessTokenSecret("9VyHq0MIYAUE8taqStT9ZMiPfHbOdXGkfbps5oHJT2smK");
+                    .setOAuthConsumerKey("RKHmcFp1L9QR0gwS3GvzkW6PW")
+                    .setOAuthConsumerSecret("wXnitH7Og8L6W8LjaHDT6qq6L3BIN3BPkCQMMzubvmBiOvTbp4")
+                    .setOAuthAccessToken("4141536579-2C6aP6k93x64HTy9oWTlwsm30XGDb5fk7VzMqin")
+                    .setOAuthAccessTokenSecret("16cPTKiOrb8sbd8Dca2K6xPRB4F3vXFDpix3PptXu9N1J");
+
+
             TwitterFactory tf = new TwitterFactory(cb.build());
             Twitter twitter = tf.getInstance();
 
@@ -64,6 +71,8 @@ public class TestTwitter4J {
             int i = 0;
             int len = args.length;
             String querytxt = args[0] ;
+//            String querytxt = "TESLA AND start_time=2015-03-10T11:30:00.000Z";
+//            String querytxt = "TESLA maxResults";
             Query query = new Query(querytxt); // Look for exact match syntax on twitter docs "(Mark Widmar) OR (FSLR)  OR (First Solar)"
             //query.setCount(10); //tweet count limit
             query.setLang( "en");
@@ -72,7 +81,7 @@ public class TestTwitter4J {
 
 //            FileWriter csvWriter = new FileWriter("D:/NYU/Semester 2/Big Data Science/Project Idea/Final Project/twitterdumps_output/datadump_firstsolar.csv",true);// change to relative path later
 
-            FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v2/datadump_firstsolar_created_at_v3.csv",true);// change to relative path later
+            FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v2/datadump_firstsolar_created_at_v5.csv",true);// change to relative path later
 
             csvWriter.append("Rundate:"+ strDate+ "\n");
             csvWriter.append("CreatedAt");
