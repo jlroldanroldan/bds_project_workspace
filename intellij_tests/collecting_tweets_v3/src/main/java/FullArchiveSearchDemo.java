@@ -26,7 +26,8 @@ public class FullArchiveSearchDemo {
         String bearerToken = System.getenv("BEARER_TOKEN");
         if (null != bearerToken) {
             //Replace the search term with a term of your choice
-            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
+//            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
+            String response = search("FSLR", bearerToken);
             System.out.println(response);
         } else {
             System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
