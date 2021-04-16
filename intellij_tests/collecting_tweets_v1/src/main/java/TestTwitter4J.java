@@ -72,7 +72,7 @@ public class TestTwitter4J {
 
 //            FileWriter csvWriter = new FileWriter("D:/NYU/Semester 2/Big Data Science/Project Idea/Final Project/twitterdumps_output/datadump_firstsolar.csv",true);// change to relative path later
 
-            FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/test_twitter_api_intellij/datadump_firstsolar.csv",true);// change to relative path later
+            FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v1/datadump_firstsolar.csv",true);// change to relative path later
 
 
             csvWriter.append("Rundate:"+ strDate+ "ScreenName");
