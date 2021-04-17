@@ -14,6 +14,12 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 /*
  * Sample code to demonstrate the use of the Full archive search endpoint
  * */
@@ -22,13 +28,26 @@ public class FullArchiveSearchDemo {
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
-    public static void main(String args[]) throws IOException, URISyntaxException {
+    public static void main(String args[]) throws IOException, URISyntaxException, ParseException {
         String bearerToken = System.getenv("BEARER_TOKEN");
         if (null != bearerToken) {
             //Replace the search term with a term of your choice
 //            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
             String response = search("FSLR", bearerToken);
             System.out.println(response);
+            JSONParser parse = new JSONParser();
+            JSONObject jobj = (JSONObject)parse.parse(response);
+            JSONArray jsonarr_1 = (JSONArray) jobj.get("data");
+            System.out.println(jsonarr_1);
+            //Get data for Results array
+            for(int i=0;i<jsonarr_1.size();i++) {
+                //Store the JSON objects in an array
+                //Get the index of the JSON object and print the values as per the index
+                JSONObject jsonobj_1 = (JSONObject)jsonarr_1.get(i);
+                System.out.println("Elements under results array");
+                System.out.println("\nid: " +jsonobj_1.get("id"));
+                System.out.println("tex: " +jsonobj_1.get("text"));
+            }
         } else {
             System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
         }
