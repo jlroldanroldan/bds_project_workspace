@@ -35,21 +35,26 @@ public class FullArchiveSearchDemo {
 //            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
             String response = search("FSLR", bearerToken);
             System.out.println(response);
-            JSONParser parse = new JSONParser();
-            JSONObject jobj = (JSONObject)parse.parse(response);
-            JSONArray jsonarr_1 = (JSONArray) jobj.get("data");
-            System.out.println(jsonarr_1);
-            //Get data for Results array
-            for(int i=0;i<jsonarr_1.size();i++) {
-                //Store the JSON objects in an array
-                //Get the index of the JSON object and print the values as per the index
-                JSONObject jsonobj_1 = (JSONObject)jsonarr_1.get(i);
-                System.out.println("Elements under results array");
-                System.out.println("\nid: " +jsonobj_1.get("id"));
-                System.out.println("tex: " +jsonobj_1.get("text"));
-            }
+            save_to_csv(response);
+
         } else {
             System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
+        }
+    }
+
+    private static void save_to_csv(String response) throws ParseException {
+        JSONParser parse = new JSONParser();
+        JSONObject jobj = (JSONObject)parse.parse(response);
+        JSONArray jsonarr_1 = (JSONArray) jobj.get("data");
+        System.out.println(jsonarr_1);
+        //Get data for Results array
+        for(int i=0;i<jsonarr_1.size();i++) {
+            //Store the JSON objects in an array
+            //Get the index of the JSON object and print the values as per the index
+            JSONObject jsonobj_1 = (JSONObject)jsonarr_1.get(i);
+            System.out.println("Elements under results array");
+            System.out.println("\nid: " +jsonobj_1.get("id"));
+            System.out.println("tex: " +jsonobj_1.get("text"));
         }
     }
 
