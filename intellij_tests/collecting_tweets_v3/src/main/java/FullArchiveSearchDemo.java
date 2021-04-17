@@ -26,6 +26,8 @@ import org.json.simple.parser.ParseException;
  * */
 public class FullArchiveSearchDemo {
 
+    private static String start_time = "2020-01-01T11:30:00.000Z";
+    private static String end_time = "2020-01-02T11:30:00.000Z";
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
@@ -91,8 +93,10 @@ public class FullArchiveSearchDemo {
         queryParameters.add(new BasicNameValuePair("query", searchString));
         queryParameters.add(new BasicNameValuePair("max_results", "25"));
         queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
-        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
-        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
+//        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
+//        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
+        queryParameters.add(new BasicNameValuePair("start_time", start_time));
+        queryParameters.add(new BasicNameValuePair("end_time", end_time));
 
 //        queryParameters.add(new BasicNameValuePair("lang", "en"));
         uriBuilder.addParameters(queryParameters);
