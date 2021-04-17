@@ -1,0 +1,3 @@
+# enphase_energy queries
+($ENPH) OR ("Enphase Energy") OR (Badri Kothandaraman) OR (@Enphase) OR (from:Enphase)  lang:en -is:retweet
+original: "$ENPH lang:en -is:retweet"

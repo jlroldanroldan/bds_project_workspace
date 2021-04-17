@@ -34,20 +34,22 @@ public class FullArchiveSearchDemo {
     private static String end_time = "2021-02-01T01:00:00.000Z";
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
+    private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (Badri Kothandaraman) OR (@Enphase) OR (from:Enphase)  lang:en -is:retweet";
+    private static int max_results = 500;
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
     public static void main(String args[]) throws IOException, URISyntaxException, ParseException {
 //        set_time_period();
         if (null != bearerToken) {
-            String response = search("$ENPH lang:en", bearerToken);
+            String response = search(search_query, bearerToken);
             System.out.println(response);
 
             save_response_to_csv(response);
             // request more pages if next_token is available
             while (next_token != null) {
                 System.out.println("next_token= " + next_token);
-                response = search("$ENPH lang:en -is:retweet", bearerToken);
+                response = search(search_query, bearerToken);
                 save_response_to_csv(response);
             }
             next_token = null;
