@@ -55,16 +55,20 @@ public class FullArchiveSearchDemo {
         csvWriter.append(",");
         csvWriter.append("TweetText");
         csvWriter.append("\n");
-        csvWriter.flush();
-        csvWriter.close();
         for(int i=0;i<jsonarr_1.size();i++) {
             //Store the JSON objects in an array
             //Get the index of the JSON object and print the values as per the index
             JSONObject jsonobj_1 = (JSONObject)jsonarr_1.get(i);
-            System.out.println("Elements under results array");
-            System.out.println("\nid: " +jsonobj_1.get("id"));
-            System.out.println("tex: " +jsonobj_1.get("text"));
+//            System.out.println("Elements under results array");
+            csvWriter.append(jsonobj_1.get("id").toString());
+            csvWriter.append(",");
+            csvWriter.append(jsonobj_1.get("text").toString().replace("\n", "").replace("\r", "").replace(",", " "));
+            csvWriter.append("\n");
+//            System.out.println("\nid: " +jsonobj_1.get("id"));
+//            System.out.println("tex: " +jsonobj_1.get("text"));
         }
+        csvWriter.flush();
+        csvWriter.close();
     }
 
     /*
