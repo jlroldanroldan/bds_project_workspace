@@ -30,12 +30,15 @@ import org.json.simple.parser.ParseException;
  * */
 public class FullArchiveSearchDemo {
 
-    private static String start_time = "2021-01-01T01:00:00.000Z";
-    private static String end_time = "2021-02-01T01:00:00.000Z";
+    private static String start_time = "2020-03-01T01:00:00.000Z";
+    private static String end_time = "2020-04-01T01:00:00.000Z";
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
-    private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (Badri Kothandaraman) OR (@Enphase) OR (from:Enphase)  lang:en -is:retweet";
-    private static int max_results = 500;
+    private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (\"Badri Kothandaraman\") OR (@enphase) OR (from:enphase)  lang:en -is:retweet";
+//    private static String search_query =  "(@FirstSolar) OR (Mark Widmar) OR (FSLR)  OR (First Solar) lang:en -is:retweet";
+    private static String max_results = "500";
+    private static String file_name = "1_enphase_energy_tweets.csv";
+//    private static String file_name = "1_first_solar_tweets.csv";
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
@@ -43,9 +46,10 @@ public class FullArchiveSearchDemo {
 //        set_time_period();
         if (null != bearerToken) {
             String response = search(search_query, bearerToken);
-            System.out.println(response);
+//            System.out.println(response);
 
             save_response_to_csv(response);
+
             // request more pages if next_token is available
             while (next_token != null) {
                 System.out.println("next_token= " + next_token);
@@ -72,7 +76,7 @@ public class FullArchiveSearchDemo {
 
         if (response_json.containsKey("data")){
             JSONArray data = (JSONArray) response_json.get("data");
-            System.out.println(data);
+//            System.out.println(data);
             save_tweets_to_csv(data);
         }
 
@@ -89,10 +93,12 @@ public class FullArchiveSearchDemo {
     }
 
     private static void save_tweets_to_csv(JSONArray data) throws IOException {
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/1_enphase_energy.csv",true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/" + file_name,true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("TweetId");
+        csvWriter.append(",");
+        csvWriter.append("AuthorId");
         csvWriter.append(",");
         csvWriter.append("TweetText");
         csvWriter.append("\n");
@@ -102,6 +108,8 @@ public class FullArchiveSearchDemo {
             csvWriter.append(tweet.get("created_at").toString());
             csvWriter.append(",");
             csvWriter.append(tweet.get("id").toString());
+            csvWriter.append(",");
+            csvWriter.append(tweet.get("author_id").toString());
             csvWriter.append(",");
             csvWriter.append(tweet.get("text").toString().replace("\n", "").replace("\r", "").replace(",", " "));
             csvWriter.append("\n");
@@ -126,8 +134,8 @@ public class FullArchiveSearchDemo {
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", searchString));
-        queryParameters.add(new BasicNameValuePair("max_results", "500"));
-        queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
+        queryParameters.add(new BasicNameValuePair("max_results", max_results));
+        queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at,author_id"));
 //        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
 //        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
         queryParameters.add(new BasicNameValuePair("start_time", start_time));
