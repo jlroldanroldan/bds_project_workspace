@@ -26,8 +26,8 @@ import org.json.simple.parser.ParseException;
  * */
 public class FullArchiveSearchDemo {
 
-    private static String start_time = "2020-02-01T00:00:00.000Z";
-    private static String end_time = "2020-03-01T02:00:00.000Z";
+    private static String start_time = "2020-04-05T02:00:00.000Z";
+    private static String end_time = "2020-04-15T02:00:00.000Z";
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
     // To set your enviornment variables in your terminal run the following line:
@@ -42,7 +42,7 @@ public class FullArchiveSearchDemo {
             // request more pages if next_token is available
             while (next_token != null) {
                 System.out.println("next_token= " + next_token);
-                response = search("$ENPH lang:en", bearerToken);
+                response = search("$ENPH lang:en -is:retweet", bearerToken);
                 save_response_to_csv(response);
             }
             next_token = null;
@@ -55,22 +55,27 @@ public class FullArchiveSearchDemo {
     private static void save_response_to_csv(String response) throws ParseException, IOException, URISyntaxException {
         JSONParser parse = new JSONParser();
         JSONObject response_json = (JSONObject)parse.parse(response);
-        JSONArray data = (JSONArray) response_json.get("data");
-        JSONObject meta = (JSONObject) response_json.get("meta");
-        System.out.println(data);
-        System.out.println(meta);
 
-        if (meta.containsKey("next_token")) {
-            next_token = meta.get("next_token").toString();
-        } else {
-            next_token = null;
+        if (response_json.containsKey("data")){
+            JSONArray data = (JSONArray) response_json.get("data");
+            System.out.println(data);
+            save_tweets_to_csv(data);
         }
 
-        save_tweets_to_csv(data);
+        if (response_json.containsKey("meta")){
+            JSONObject meta = (JSONObject) response_json.get("meta");
+            System.out.println(meta);
+            if (meta.containsKey("next_token")) {
+                next_token = meta.get("next_token").toString();
+            } else {
+                next_token = null;
+            }
+        }
+
     }
 
     private static void save_tweets_to_csv(JSONArray data) throws IOException {
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/enph_v4_pagination.csv",true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/enph_now.csv",true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("TweetId");
@@ -107,7 +112,7 @@ public class FullArchiveSearchDemo {
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", searchString));
-        queryParameters.add(new BasicNameValuePair("max_results", "25"));
+        queryParameters.add(new BasicNameValuePair("max_results", "100"));
         queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
 //        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
 //        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
