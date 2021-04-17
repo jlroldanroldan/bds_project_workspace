@@ -1,7 +1,11 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -26,14 +30,15 @@ import org.json.simple.parser.ParseException;
  * */
 public class FullArchiveSearchDemo {
 
-    private static String start_time = "2020-04-05T02:00:00.000Z";
-    private static String end_time = "2020-04-15T02:00:00.000Z";
+    private static String start_time = "2021-01-01T01:00:00.000Z";
+    private static String end_time = "2021-02-01T01:00:00.000Z";
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
     public static void main(String args[]) throws IOException, URISyntaxException, ParseException {
+//        set_time_period();
         if (null != bearerToken) {
             String response = search("$ENPH lang:en", bearerToken);
             System.out.println(response);
@@ -51,6 +56,13 @@ public class FullArchiveSearchDemo {
             System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
         }
     }
+
+//    private static void set_time_period(){
+//        TimeZone tz = TimeZone.getTimeZone("UTC");
+//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
+//        df.setTimeZone(tz);
+//        end_time = df.format(new Date()).toString();
+//    }
 
     private static void save_response_to_csv(String response) throws ParseException, IOException, URISyntaxException {
         JSONParser parse = new JSONParser();
@@ -75,7 +87,7 @@ public class FullArchiveSearchDemo {
     }
 
     private static void save_tweets_to_csv(JSONArray data) throws IOException {
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/enph_now.csv",true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/1_enphase_energy.csv",true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("TweetId");
@@ -112,7 +124,7 @@ public class FullArchiveSearchDemo {
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", searchString));
-        queryParameters.add(new BasicNameValuePair("max_results", "100"));
+        queryParameters.add(new BasicNameValuePair("max_results", "500"));
         queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
 //        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
 //        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
