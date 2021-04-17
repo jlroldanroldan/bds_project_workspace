@@ -91,7 +91,8 @@ public class FullArchiveSearchDemo {
         queryParameters.add(new BasicNameValuePair("query", searchString));
         queryParameters.add(new BasicNameValuePair("max_results", "25"));
         queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
-        queryParameters.add(new BasicNameValuePair("end_time", "2020-01-08T11:30:00.000Z"));
+        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
+        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
 
 //        queryParameters.add(new BasicNameValuePair("lang", "en"));
         uriBuilder.addParameters(queryParameters);
