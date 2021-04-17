@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -42,12 +43,20 @@ public class FullArchiveSearchDemo {
         }
     }
 
-    private static void save_to_csv(String response) throws ParseException {
+    private static void save_to_csv(String response) throws ParseException, IOException {
         JSONParser parse = new JSONParser();
         JSONObject jobj = (JSONObject)parse.parse(response);
         JSONArray jsonarr_1 = (JSONArray) jobj.get("data");
         System.out.println(jsonarr_1);
         //Get data for Results array
+
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v3/datadump_firstsolar.csv",true);// change to relative path later
+        csvWriter.append("ScreenName");
+        csvWriter.append(",");
+        csvWriter.append("TweetText");
+        csvWriter.append("\n");
+        csvWriter.flush();
+        csvWriter.close();
         for(int i=0;i<jsonarr_1.size();i++) {
             //Store the JSON objects in an array
             //Get the index of the JSON object and print the values as per the index
