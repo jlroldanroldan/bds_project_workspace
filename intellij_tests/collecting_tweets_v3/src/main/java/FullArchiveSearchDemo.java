@@ -34,7 +34,8 @@ public class FullArchiveSearchDemo {
         if (null != bearerToken) {
             //Replace the search term with a term of your choice
 //            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
-            String response = search("FSLR", bearerToken);
+//            String response = search("FSLR", bearerToken);
+            String response = search("NYU", bearerToken);
             System.out.println(response);
             save_to_csv(response);
 
@@ -86,6 +87,7 @@ public class FullArchiveSearchDemo {
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", searchString));
+        queryParameters.add(new BasicNameValuePair("max_results", "100"));
         uriBuilder.addParameters(queryParameters);
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());
