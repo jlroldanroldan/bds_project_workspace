@@ -27,7 +27,7 @@ import org.json.simple.parser.ParseException;
 public class FullArchiveSearchDemo {
 
     private static String start_time = "2020-01-01T00:00:00.000Z";
-    private static String end_time = "2020-01-30T23:30:00.000Z";
+    private static String end_time = "2020-02-01T02:00:00.000Z";
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
@@ -37,7 +37,7 @@ public class FullArchiveSearchDemo {
             //Replace the search term with a term of your choice
 //            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
 //            String response = search("(FSLR) OR (TetraSun) OR (Mark Widmar) lang:en", bearerToken);
-            String response = search("\"ENPH\" lang:en", bearerToken);
+            String response = search("\"$ENPH\" lang:en", bearerToken);
 //            String response = search("NYU", bearerToken);
             System.out.println(response);
             save_to_csv(response);
@@ -51,13 +51,21 @@ public class FullArchiveSearchDemo {
         JSONParser parse = new JSONParser();
         JSONObject jobj = (JSONObject)parse.parse(response);
         JSONArray jsonarr_1 = (JSONArray) jobj.get("data");
+        JSONObject meta = (JSONObject) jobj.get("meta");
         System.out.println(jsonarr_1);
+        System.out.println(meta);
+        if (meta.containsKey("next_token")){
+            String next_token = meta.get("next_token").toString();
+            System.out.println("next_token= " + next_token);
+        } else {
+            System.out.println("No token!!");
+        }
         //Get data for Results array
 
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v3/datadump_enph_v2.csv",true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/enph_v4_pagination.csv",true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
-        csvWriter.append("ScreenName");
+        csvWriter.append("TweetId");
         csvWriter.append(",");
         csvWriter.append("TweetText");
         csvWriter.append("\n");
