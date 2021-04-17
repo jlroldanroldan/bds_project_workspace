@@ -26,8 +26,8 @@ import org.json.simple.parser.ParseException;
  * */
 public class FullArchiveSearchDemo {
 
-    private static String start_time = "2020-01-01T11:30:00.000Z";
-    private static String end_time = "2020-01-02T11:30:00.000Z";
+    private static String start_time = "2020-01-01T00:00:00.000Z";
+    private static String end_time = "2020-01-30T23:30:00.000Z";
     // To set your enviornment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
@@ -36,7 +36,8 @@ public class FullArchiveSearchDemo {
         if (null != bearerToken) {
             //Replace the search term with a term of your choice
 //            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
-            String response = search("FSLR lang:en", bearerToken);
+//            String response = search("(FSLR) OR (TetraSun) OR (Mark Widmar) lang:en", bearerToken);
+            String response = search("\"ENPH\" lang:en", bearerToken);
 //            String response = search("NYU", bearerToken);
             System.out.println(response);
             save_to_csv(response);
@@ -53,7 +54,7 @@ public class FullArchiveSearchDemo {
         System.out.println(jsonarr_1);
         //Get data for Results array
 
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v3/datadump_firstsolar_lang_en_created_at.csv",true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v3/datadump_enph_v2.csv",true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("ScreenName");
