@@ -34,8 +34,8 @@ public class FullArchiveSearchDemo {
         if (null != bearerToken) {
             //Replace the search term with a term of your choice
 //            String response = search("from:TwitterDev OR from:SnowBotDev OR from:DailyNASA", bearerToken);
-//            String response = search("FSLR", bearerToken);
-            String response = search("NYU", bearerToken);
+            String response = search("FSLR lang:en", bearerToken);
+//            String response = search("NYU", bearerToken);
             System.out.println(response);
             save_to_csv(response);
 
@@ -51,7 +51,9 @@ public class FullArchiveSearchDemo {
         System.out.println(jsonarr_1);
         //Get data for Results array
 
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v3/datadump_firstsolar.csv",true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v3/datadump_firstsolar_lang_en_created_at.csv",true);// change to relative path later
+        csvWriter.append("CreatedAt");
+        csvWriter.append(",");
         csvWriter.append("ScreenName");
         csvWriter.append(",");
         csvWriter.append("TweetText");
@@ -61,12 +63,12 @@ public class FullArchiveSearchDemo {
             //Get the index of the JSON object and print the values as per the index
             JSONObject jsonobj_1 = (JSONObject)jsonarr_1.get(i);
 //            System.out.println("Elements under results array");
+            csvWriter.append(jsonobj_1.get("created_at").toString());
+            csvWriter.append(",");
             csvWriter.append(jsonobj_1.get("id").toString());
             csvWriter.append(",");
             csvWriter.append(jsonobj_1.get("text").toString().replace("\n", "").replace("\r", "").replace(",", " "));
             csvWriter.append("\n");
-//            System.out.println("\nid: " +jsonobj_1.get("id"));
-//            System.out.println("tex: " +jsonobj_1.get("text"));
         }
         csvWriter.flush();
         csvWriter.close();
@@ -87,7 +89,11 @@ public class FullArchiveSearchDemo {
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", searchString));
-        queryParameters.add(new BasicNameValuePair("max_results", "100"));
+        queryParameters.add(new BasicNameValuePair("max_results", "25"));
+        queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
+        queryParameters.add(new BasicNameValuePair("end_time", "2020-01-08T11:30:00.000Z"));
+
+//        queryParameters.add(new BasicNameValuePair("lang", "en"));
         uriBuilder.addParameters(queryParameters);
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());
