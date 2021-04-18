@@ -35,9 +35,9 @@ public class FullArchiveSearchDemo {
     private static String bearerToken = System.getenv("BEARER_TOKEN");
 
     private static String start_time = "2017-01-01T01:00:00.000Z";
-    private static String end_time = "2017-05-01T01:00:00.000Z";
-    private static String search_query =  "($FSLR OR  \"Mark Widmar\" \"CEO\" OR  \"Michael J. Ahearn\" OR @FirstSolar OR from:FirstSolar) lang:en -is:retweet";
-    private static String file_name = "1_first_solar_tweets_v2.csv";
+    private static String end_time = "2018-01-01T01:00:00.000Z";
+    private static String search_query =  "($SGRE  OR  \"Siemens Gamesa\"  OR \"Siemens Wind Power\" OR \"Andreas Nauen\" \"CEO\" OR from:SiemensGamesa OR @SiemensGamesa OR @SiemensGamesaAf OR @SiemensGamesaUK OR @MAlopezborrego OR @SiemensGamesaES OR @MarkusTacke OR \"Siemens Energy\" OR from:SiemensGamesaAf OR from:SiemensGamesaUK OR from:MAlopezborrego OR from:SiemensGamesaES OR from:MarkusTacke) lang:en -is:retweet";
+    private static String file_name = "3_siemens_gamesa_tweets_v2.csv";
     private static String max_results = "500";
 
 
