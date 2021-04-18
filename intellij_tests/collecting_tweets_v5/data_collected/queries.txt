@@ -56,5 +56,10 @@ private static String max_results = "500";
 # =================================================
 # Sunrun
 # =================================================
+private static String start_time = "2011-01-01T01:00:00.000Z";
+private static String end_time = "2012-01-01T01:00:00.000Z";
+private static String search_query =  "($SPWR  OR \"SunPower Corporation\" OR \"Thomas H. Werner\" \"CEO\" OR @SunPower OR from:SunPower)  lang:en -is:retweet";
+private static String file_name = "7_sunpower_tweets.csv";
+private static String max_results = "500";
 
 
