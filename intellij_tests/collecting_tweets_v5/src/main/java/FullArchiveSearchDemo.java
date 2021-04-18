@@ -31,9 +31,9 @@ public class FullArchiveSearchDemo {
     private static String bearerToken = System.getenv("BEARER_TOKEN");
 
     private static String start_time = "2011-01-01T01:00:00.000Z";
-    private static String end_time = "2015-01-01T01:00:00.000Z";
-    private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (\"Badri Kothandaraman\") OR (@enphase) OR (from:enphase)  lang:en -is:retweet";
-    private static String file_name = "1_enphase_energy_tweets.csv";
+    private static String end_time = "2015-03-01T01:00:00.000Z";
+    private static String search_query = "($MEL OR $MEZ OR \"Meridian Energy\" OR \"Meridian Energy Limited\" OR \"Neal Barclay\"  \"CEO\" OR @MeridianEnergy OR from:MeridianEnergy)  lang:en -is:retweet";
+    private static String file_name = "8_meridian_energy_tweets.csv";
     private static String max_results = "500";
 
 
