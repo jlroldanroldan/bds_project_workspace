@@ -81,7 +81,7 @@ public class FullArchiveSearchDemo {
     }
 
     private static void save_tweets_to_csv(JSONArray data) throws IOException {
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v4_pagination/data_collected/" + file_name,true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v5/data_collected/" + file_name,true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("TweetId");
