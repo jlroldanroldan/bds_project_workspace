@@ -81,7 +81,7 @@ public class FullArchiveSearchDemo {
     }
 
     private static void save_tweets_to_csv(JSONArray data) throws IOException {
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v5/data_collected/" + file_name,true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v5/data_collected/" + ,true);// change to relative path later
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("TweetId");
@@ -92,7 +92,6 @@ public class FullArchiveSearchDemo {
         csvWriter.append("\n");
         for(int i=0;i<data.size();i++) {
             JSONObject tweet = (JSONObject)data.get(i);
-//            System.out.println("Elements under results array");
             csvWriter.append(tweet.get("created_at").toString());
             csvWriter.append(",");
             csvWriter.append(tweet.get("id").toString());
@@ -104,7 +103,6 @@ public class FullArchiveSearchDemo {
         }
         csvWriter.flush();
         csvWriter.close();
-
     }
 
     /*
