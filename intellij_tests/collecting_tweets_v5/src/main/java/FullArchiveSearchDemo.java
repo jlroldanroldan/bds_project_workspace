@@ -30,8 +30,8 @@ public class FullArchiveSearchDemo {
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
 
-    private static String start_time = "2019-01-01T01:-00:00.000Z";
-    private static String end_time = "2020-01-01T01:00:00.000Z";
+    private static String start_time = "2011-01-01T01:00:00.000Z";
+    private static String end_time = "2015-01-01T01:00:00.000Z";
     private static String search_query =  "($RUN OR \"Sunrun\" OR @Sunrun OR from:Sunrun OR \"Lynn Jurich\" OR @LynnJurich OR from:LynnJurich OR \"Edward Fenster\" \"chairman\")  lang:en -is:retweet";
     private static String file_name = "6_sunrun_tweets.csv";
     private static String max_results = "500";
