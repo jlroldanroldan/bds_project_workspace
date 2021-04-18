@@ -36,8 +36,8 @@ public class FullArchiveSearchDemo {
 
     private static String start_time = "2017-01-01T01:00:00.000Z";
     private static String end_time = "2018-01-01T01:00:00.000Z";
-    private static String search_query =  "($SGRE  OR  \"Siemens Gamesa\"  OR \"Siemens Wind Power\" OR \"Andreas Nauen\" \"CEO\" OR from:SiemensGamesa OR @SiemensGamesa OR @SiemensGamesaAf OR @SiemensGamesaUK OR @MAlopezborrego OR @SiemensGamesaES OR @MarkusTacke OR \"Siemens Energy\" OR from:SiemensGamesaAf OR from:SiemensGamesaUK OR from:MAlopezborrego OR from:SiemensGamesaES OR from:MarkusTacke) lang:en -is:retweet";
-    private static String file_name = "3_siemens_gamesa_tweets_v2.csv";
+    private static String search_query =  "($PLUG OR \"Plug Power Inc\" OR @PlugPowerInc OR  \"Andrew Marsh\" \"CEO\" OR  \"George C. McNamee\" \"chairman\") lang:en -is:retweet";
+    private static String file_name = "4_plug_power_tweets.csv";
     private static String max_results = "500";
 
 
@@ -56,7 +56,7 @@ public class FullArchiveSearchDemo {
                 save_response_to_csv(response);
             }
             next_token = null;
-            System.out.println("No token!!");
+            System.out.println("Requests done!");
         } else {
             System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
         }
