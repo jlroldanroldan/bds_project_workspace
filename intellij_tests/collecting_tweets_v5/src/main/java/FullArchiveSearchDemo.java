@@ -1,11 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.TimeZone;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -29,7 +25,7 @@ import org.json.simple.parser.ParseException;
  * Sample code to demonstrate the use of the Full archive search endpoint
  * */
 public class FullArchiveSearchDemo {
-    // To set your enviornment variables in your terminal run the following line:
+    // To set your enviroment variables in your terminal run the following line:
     // export 'BEARER_TOKEN'='<your_bearer_token>'
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
@@ -61,13 +57,6 @@ public class FullArchiveSearchDemo {
             System.out.println("There was a problem getting your bearer token. Please make sure you set the BEARER_TOKEN environment variable");
         }
     }
-
-//    private static void set_time_period(){
-//        TimeZone tz = TimeZone.getTimeZone("UTC");
-//        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
-//        df.setTimeZone(tz);
-//        end_time = df.format(new Date()).toString();
-//    }
 
     private static void save_response_to_csv(String response) throws ParseException, IOException, URISyntaxException {
         JSONParser parse = new JSONParser();
@@ -135,15 +124,12 @@ public class FullArchiveSearchDemo {
         queryParameters.add(new BasicNameValuePair("query", searchString));
         queryParameters.add(new BasicNameValuePair("max_results", max_results));
         queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at,author_id"));
-//        queryParameters.add(new BasicNameValuePair("start_time", "2020-01-08T11:30:00.000Z"));
-//        queryParameters.add(new BasicNameValuePair("end_time", "2020-02-08T11:30:00.000Z"));
         queryParameters.add(new BasicNameValuePair("start_time", start_time));
         queryParameters.add(new BasicNameValuePair("end_time", end_time));
         if (next_token != null){
             queryParameters.add(new BasicNameValuePair("next_token", next_token));
         }
 
-//        queryParameters.add(new BasicNameValuePair("lang", "en"));
         uriBuilder.addParameters(queryParameters);
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());
