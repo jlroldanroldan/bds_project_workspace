@@ -1,8 +1,8 @@
 # =================================================
 # enphase_energy
 # =================================================
-private static String start_time = "2017-01-01T01:00:00.000Z";
-private static String end_time = "2017-02-01T01:00:00.000Z";
+private static String start_time = "2011-01-01T01:00:00.000Z";
+private static String end_time = "2015-01-01T01:00:00.000Z";
 private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (\"Badri Kothandaraman\") OR (@enphase) OR (from:enphase)  lang:en -is:retweet";
 private static String file_name = "1_enphase_energy_tweets.csv";
 private static String max_results = "500";
