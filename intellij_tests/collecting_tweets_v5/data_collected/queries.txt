@@ -29,8 +29,8 @@ private static String max_results = "500";
 # =================================================
 # PlugPowerInc
 # =================================================
-private static String start_time = "2017-01-01T01:00:00.000Z";
-private static String end_time = "2018-01-01T01:00:00.000Z";
+private static String start_time = "2011-01-01T01:00:00.000Z";
+private static String end_time = "2013-11-27T18:07:08.000Z";
 private static String search_query =  "($PLUG OR \"Plug Power Inc\" OR @PlugPowerInc OR  \"Andrew Marsh\" \"CEO\" OR  \"George C. McNamee\" \"chairman\") lang:en -is:retweet";
 private static String file_name = "4_plug_power_tweets.csv";
 private static String max_results = "500";
