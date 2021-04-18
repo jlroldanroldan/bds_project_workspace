@@ -1,7 +1,5 @@
 # enphase_energy queries
-($ENPH) OR ("Enphase Energy") OR (Badri Kothandaraman) OR (@Enphase) OR (from:Enphase)  lang:en -is:retweet
 private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (\"Badri Kothandaraman\") OR (@enphase) OR (from:enphase)  lang:en -is:retweet";
-original: "$ENPH lang:en -is:retweet"
 
-# enphase_energy queries
+# first_solar queries
 private static String search_query =  "(@FirstSolar) OR (Mark Widmar) OR (FSLR)  OR (First Solar) lang:en -is:retweet";

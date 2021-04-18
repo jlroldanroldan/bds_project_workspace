@@ -30,8 +30,8 @@ import org.json.simple.parser.ParseException;
  * */
 public class FullArchiveSearchDemo {
 
-    private static String start_time = "2020-03-01T01:00:00.000Z";
-    private static String end_time = "2020-04-01T01:00:00.000Z";
+    private static String start_time = "2017-01-01T01:00:00.000Z";
+    private static String end_time = "2017-02-01T01:00:00.000Z";
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
     private static String search_query = "($ENPH) OR (\"Enphase Energy\") OR (\"Badri Kothandaraman\") OR (@enphase) OR (from:enphase)  lang:en -is:retweet";
