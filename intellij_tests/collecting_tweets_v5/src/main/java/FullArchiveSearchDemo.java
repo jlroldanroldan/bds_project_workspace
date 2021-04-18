@@ -30,15 +30,14 @@ public class FullArchiveSearchDemo {
     private static String next_token = null;
     private static String bearerToken = System.getenv("BEARER_TOKEN");
 
-    private static String start_time = "2021-03-01T01:00:00.000Z";
-    private static String end_time = "2021-04-01T01:00:00.000Z";
-    private static String search_query =  "($TSLA OR $SCTY \"Solar City\" OR @Tesla OR  \"Lyndon Rive\" \"CEO\"  OR @solarcity )  lang:en -is:retweet";
-    private static String file_name = "5_tesla_tweets.csv";
+    private static String start_time = "2019-01-01T01:-00:00.000Z";
+    private static String end_time = "2020-01-01T01:00:00.000Z";
+    private static String search_query =  "($)  lang:en -is:retweet";
+    private static String file_name = "7_sunpower_tweets.csv";
     private static String max_results = "500";
 
 
     public static void main(String args[]) throws IOException, URISyntaxException, ParseException {
-//        set_time_period();
         if (null != bearerToken) {
             String response = search(search_query, bearerToken);
 //            System.out.println(response);
@@ -81,7 +80,7 @@ public class FullArchiveSearchDemo {
     }
 
     private static void save_tweets_to_csv(JSONArray data) throws IOException {
-        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v5/data_collected/" + ,true);// change to relative path later
+        FileWriter csvWriter = new FileWriter("/Users/Jroldan001/nyu/spring_2021/bds/bds_project_workspace/intellij_tests/collecting_tweets_v5/data_collected/" + file_name,true);
         csvWriter.append("CreatedAt");
         csvWriter.append(",");
         csvWriter.append("TweetId");
